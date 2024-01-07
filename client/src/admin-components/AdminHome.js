@@ -72,14 +72,6 @@ const AdminHome = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  // useEffect(() => {
-    // axios.get(`http://localhost:8080/getImage/${email}`)
-    // .then((res) => setImageUrl(res.data.imageurl))
-    // .catch((err) => console.log(err));
-  // }, [])
-
-  
-
   const handleView = (user) => {
 
     setShowDetails(true)
@@ -144,14 +136,29 @@ const AdminHome = () => {
 
   const link = `http://localhost:8080/uploads/${imageUrl}`
 
-  console.log(imageUrl)
-  console.log(link)
+  // console.log(imageUrl)
+  // console.log(link)
 
   // console.log(studentDetails)
   // console.log(studentStudyDetails)
   // console.log(studentResidenialDetails)
   // console.log(studentInstitutionDetails)
   // console.log(studentStudyDetails.data.sscBoard)
+
+  const handleFail = () => {
+    setShowDetails(false)
+    axios.delete(`http://localhost:8080/deleteApplication/${email}`)
+    .then((res) => console.log(res.data))
+    .catch((err) => console.log(err))
+
+    axios.put(`http://localhost:8080/statusUpdate/${email}`)
+    .then((res) => {})
+    .catch((err) => console.log(err))
+
+    axios.put(`http://localhost:8080/resendApplicationMoney/${email}`)
+    .then((res) => {})
+    .catch((err) => console.log(err))
+  }
 
 
 
@@ -460,6 +467,7 @@ const AdminHome = () => {
           type="text"
           variant="contained"
           color="info"
+          onClick={handleFail}
         >
           failed
         </Button>

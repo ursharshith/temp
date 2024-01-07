@@ -191,18 +191,6 @@ app.post("/applicaiton_emails", (req, res) => {
   .catch((err) => res.json(err))
 })
 
-//Image retrieve
-// app.get("/image_retrieve/:filename", async (req, res) => {
-//   try{
-//     const image = await PhotoModel.findOne({file: req.params.filename});
-//     const imagePath = path.json(__dirname, '../images/', image.filename);
-//     res.sendFile(imagePath);
-//   }
-//   catch(err) {
-//     res.status(500).send('Internal Server Error');
-//   }
-// })
-
 /*  ------------ ADMIN API'S ------------- */
 
 app.get("/application_mails", (req, res) => {
@@ -235,6 +223,22 @@ app.get("/student-apply-insitution-details/:applicationMail", (req, res) => {
 app.get("/student-apply-residential-details/:applicationMail", (req, res) => {
   const applicationMail = req.params.applicationMail;
   ResidentialAddressDetailsModel.findOne({email:applicationMail})
+    .then((result) => res.json(result))
+    .catch((err) => res.json(err));
+});
+
+// app.delete("/deleteApplication/:email", (req, res) => {
+//   const email = req.params.email;
+//   ApplicationMailsModel.findByIdAndDelte(email)
+//   .then((res) => res.json({message: "Item deleted"}))
+//   .catch((err) => res.json(err))
+// })
+
+
+/* ************ VIEW PASS API *********** */
+app.get("/getStatus/:viewMail", (req, res) => {
+  const viewMail = req.params.viewMail;
+  ApplicationMailsModel.findOne({email:viewMail})
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 });
