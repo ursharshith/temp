@@ -12,7 +12,7 @@ function ViewPass() {
   const [success, setSuccess] = useState(false)
 
   const handleView = () => {
-    axios.get(`http://localhost:8080/getStatus/${viewMail}`)
+    axios.get(`https://project-wmxw.onrender.com/getStatus/${viewMail}`)
       .then((res) => {
         setViewStatusData(res.data)
         setStatus(res.data.status)
