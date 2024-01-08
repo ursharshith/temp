@@ -1,0 +1,151 @@
+/* --------- EMAIL SEND --------- */
+
+.emailsenddiv {
+  width: 50%;
+  border-radius: 5px;
+  margin: auto;
+  height: 100uv;
+  margin-top: 50px;
+  border: 1px solid #231f20;
+}
+
+.emailsenddiv h2 {
+  padding: 20px 38px;
+  color: #231f20;
+  width: 60%;
+  margin: auto;
+}
+
+.emailsenddiv input {
+  padding: 15px;
+  margin: 8px;
+  width: 60%;
+  border-radius: 1rem;
+  box-shadow: #63bcef;
+  -webkit-text-fill-color: brown;
+  border: 1px solid #63bcef;
+}
+
+.emailsenddiv textarea {
+  marker-start: inherit;
+  box-sizing: 12px;
+  border-radius: 8px;
+  border: 1px solid #63bcef;
+  -ms-text-size-adjust: 12rem;
+}
+
+.emailsenddiv button {
+  width: 100px;
+  height: 40px;
+  background-color: #231f20;
+  color: white;
+  border-radius: 1rem;
+  margin: 20px 40%;
+  motion-rotation: reverse;
+}
+.emailsenddiv button:hover {
+  background-color: #f2f2f2;
+  color: black;
+}
+
+/* ---------- MODIFICATION PAGE ----------- */
+.walletdiv {
+  margin-right: 25%;
+  margin-left: 25%;
+  margin-top: 50px;
+}
+
+.wallet-card {
+  padding: 2rem;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.walletdiv Button {
+  margin: 1rem auto auto;
+}
+
+/* ----------- ADMIN SIGNIN USER SIGNIN USER REGISTRATION ----------- */
+.admin_signin_div,
+.user-signin-div,
+.user-registratin-div {
+  margin-top: 3rem;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.admin-singin-card,
+.user-signin-card,
+.user-registration-card {
+  height: 75vh;
+}
+
+/* ---------- STUDENT PAYMENT ------------- */
+.payment-div {
+  background-color: #fff;
+  margin: auto;
+  width: 70%;
+  padding: 10px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+.payment-textfield {
+  max-width: 50%;
+}
+
+/* --------- PAYMENT SUCCESS ---------- */
+.payment-success-page {
+  text-align: center;
+  margin-top: 50px;
+  border-radius: 8px;
+  background-color: #fff;
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+  height: 90vh;
+}
+
+/* ----------- HOME CONTENT --------- */
+.cards-div {
+  background-color: #f2f2f2;
+  width: 100%;
+  margin-top: 0;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sub-cards-div1 {
+  margin-right: 60px;
+  margin-top: 50px;
+}
+
+.sub-cards-div2 {
+  margin-top: 50px;
+}
+
+.copyright-div {
+  background-color: #fff;
+  width: 100%;
+  text-align: left;
+  height: 39px;
+}
+
+/* -------- STUDENT DETAILS OTHERS DETAILS --------- */
+.student-details-div, .others-details-div {
+  background-color: #f2f2f2;
+  margin-top: 10px;
+}
+
+.main-sub-div {
+  background-color: #fff;
+  margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.sub-divs {
+  margin: 0 30px 50px;
+}
