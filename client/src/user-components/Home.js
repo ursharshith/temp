@@ -43,6 +43,7 @@ import { useRef } from "react";
 import EmailSend from "./EmailSend";
 import OtherUserDetails from "./OtherUserDetails";
 import AdminHome from "../admin-components/AdminHome";
+import QrGenerationPage from "../admin-components/QrGenerationPage";
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -436,6 +437,7 @@ export default function Home() {
           <Route path="/other/apply" element={<OtherUserDetails />}></Route>
           admin-portal
           <Route path="/admin-portal" element={<AdminHome />}></Route>
+          <Route path="/qrgeneration" element={<QrGenerationPage />}></Route>
         </Routes>
       </Box>
     </Box>

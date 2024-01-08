@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import DoneIcon from "@mui/icons-material/Done";
 import CloseIcon from "@mui/icons-material/Close";
 import SeparateDetails from "./SeparateDetails";
+import { Route, Router, Routes, useNavigate } from "react-router-dom";
 import {
   TableContainer,
   Table,
@@ -135,6 +136,7 @@ const AdminHome = () => {
   };
 
   const link = `http://localhost:8080/uploads/${imageUrl}`
+  const [newStatus, setNewStatus] = useState("failed");
 
   // console.log(imageUrl)
   // console.log(link)
@@ -147,17 +149,24 @@ const AdminHome = () => {
 
   const handleFail = () => {
     setShowDetails(false)
-    axios.delete(`http://localhost:8080/deleteApplication/${email}`)
-    .then((res) => console.log(res.data))
-    .catch((err) => console.log(err))
+    // axios.delete(`http://localhost:8080/deleteApplication/${email}`)
+    // .then((res) => console.log(res.data))
+    // .catch((err) => console.log(err))
 
-    axios.put(`http://localhost:8080/statusUpdate/${email}`)
+    axios.put(`http://localhost:8080/statusUpdate/${email}`, {newStatus})
     .then((res) => {})
     .catch((err) => console.log(err))
 
     axios.put(`http://localhost:8080/resendApplicationMoney/${email}`)
     .then((res) => {})
     .catch((err) => console.log(err))
+  }
+
+  const navigate = useNavigate();
+
+  const handleSuccess = () => {
+    
+    navigate("/qrgeneration")
   }
 
 
@@ -460,6 +469,7 @@ const AdminHome = () => {
           variant="contained"
           style={{ marginRight: "8px" }}
           color="success"
+          onClick={handleSuccess}
         >
           Success
         </Button>

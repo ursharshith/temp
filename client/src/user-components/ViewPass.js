@@ -37,18 +37,19 @@ function ViewPass() {
 
 
   return (
-    <div>
+    <div style={{backgroundColor:"#fff", margin:"50px", padding:"50px"}}>
       <Typography
         variant="h5"
         gutterBottom
         style={{
           fontSize: "20px",
-          marginTop: "50px"
+          marginTop: "10px",
+          marginBottom:"40PX"
         }}
       >
         ENTER MAIL TO VIEW PASS
       </Typography>
-      <TextField placeholder="enter mail" type="text" required onChange={(e) => setViewMail(e.target.value)}></TextField> <br />
+      <TextField placeholder="enter mail" type="text" required onChange={(e) => setViewMail(e.target.value)} style={{width:"50%", marginBottom:"20px"}}></TextField> <br />
       <Button variant="contained" color="inherit" onClick={handleView}>VIEW</Button>
 
       {
@@ -61,8 +62,8 @@ function ViewPass() {
 
       {
         failed && (
-          <div>
-            <h4>YOUR APPLICATION HAS REJECTER</h4>
+          <div style={{color:"red"}}>
+            <h4>YOUR APPLICATION HAS REJECTED</h4>
             <h4>Please Re-apply</h4>
           </div>
         )
@@ -70,7 +71,7 @@ function ViewPass() {
 
       {
         success && (
-          <div>
+          <div style={{color:"green"}}>
             <h4>YOUR APPLICATION SUCCESS</h4>
           </div>
         )
